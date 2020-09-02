@@ -136,8 +136,10 @@ def num_points_scored(player_name)
     while count < info.length
     info[:players].each do |player|
       binding.pry
-      if info[player][:player_name] == player_name
-        return info[player][:points]
+      player.each do |stats|
+        if stats[:player_name] == player_name
+          return stats[:points]
+        end
       end
     end
   end
